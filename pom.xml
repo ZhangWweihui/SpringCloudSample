@@ -8,6 +8,7 @@
         <module>EurekaClient</module>
         <module>Gateway</module>
         <module>Feign</module>
+        <module>Config</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

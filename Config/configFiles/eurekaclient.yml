@@ -15,6 +15,6 @@ management:
     #关闭安全验证，否则访问refresh端点时会提示权限不足
     enabled: false
 ftp:
-  host: 192.168.3.1
-  user: cherry
-  password: 123456
+  host: 192.168.3.2
+  user: jack
+  password: 123asd

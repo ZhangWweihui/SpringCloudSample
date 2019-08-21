@@ -1,5 +1,6 @@
 server:
   port: 8761
+
 eureka:
   server:
     enable-self-preservation: false
@@ -12,3 +13,8 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+spring:
+  freemarker:
+    template-loader-path: classpath:/templates/
+    prefer-file-system-access: false

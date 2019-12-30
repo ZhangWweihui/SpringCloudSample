@@ -1,6 +1,6 @@
 package com.zwh.springcloud.gateway.common;
 
-import org.springframework.cloud.netflix.zuul.filters.route.ZuulFallbackProvider;
+//import org.springframework.cloud.netflix.zuul.filters.route.ZuulFallbackProvider;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -12,14 +12,14 @@ import java.io.IOException;
 import java.io.InputStream;
 
 @Component
-public class ApiFallbackProvider implements ZuulFallbackProvider {
+public class ApiFallbackProvider {//implements ZuulFallbackProvider {
 
-    @Override
+    //@Override
     public String getRoute() {
         return "EurekaClient";
     }
 
-    @Override
+    //@Override
     public ClientHttpResponse fallbackResponse() {
         return new ClientHttpResponse() {
             @Override

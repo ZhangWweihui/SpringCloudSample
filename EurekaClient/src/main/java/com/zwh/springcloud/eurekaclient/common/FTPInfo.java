@@ -9,16 +9,16 @@ import org.springframework.stereotype.Component;
  * @date 2019/3/11 18:43
  */
 @Component
-@RefreshScope
+//@RefreshScope
 public class FTPInfo {
 
-    @Value("${ftp.host}")
+    //@Value("${ftp.host}")
     private String host;
 
-    @Value("${ftp.user}")
+    //@Value("${ftp.user}")
     private String user;
 
-    @Value("${ftp.password}")
+    //@Value("${ftp.password}")
     private String password;
 
     public String getHost() {

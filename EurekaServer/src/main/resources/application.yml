@@ -3,18 +3,31 @@ server:
 
 eureka:
   server:
-    enable-self-preservation: false
+    enable-self-preservation: false #是否开启自我保护
+    wait-time-in-ms-when-sync-empty: 0
+    peer-node-read-timeout-ms: 3000 #微服务节点连接超时时间
   instance:
-    preferIpAddress: true
-    hostname: ${spring.cloud.client.ipAddress}
-    instanceId: ${spring.cloud.client.ipAddress}:${server.port}
+    hostname: localhost
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    healthcheck:
+      enabled: true
 
 spring:
   freemarker:
     template-loader-path: classpath:/templates/
     prefer-file-system-access: false
+  application:
+    name: EurekaServer
+  profiles:
+    active: dev
+  cloud:
+    inetutils:
+      preferred-networks: 127.0.0.1
+    client:
+      ip-address: 127.0.0.1

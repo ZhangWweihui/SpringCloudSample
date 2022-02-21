@@ -1,4 +1,4 @@
-package com.zwh.springcloud.eurekaserver;
+package com.zwh.springcloud.eurekaserver2;
 
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

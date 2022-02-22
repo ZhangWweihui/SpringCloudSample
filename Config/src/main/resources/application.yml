@@ -1,34 +1,36 @@
 server:
   port: 8888
+
 spring:
   application:
-    name: config
+    name: springcloud-sample-config
   profiles:
     active: dev
   cloud:
-    bus:
-      trace:
-        enable: true
+#    bus:
+#      trace:
+#        enable: true
     config:
       server:
         git:
-          uri: https://github.com/ZhangWweihui/SpringCloudSample.git #配置git仓库地址
-          searchPaths: Config/configFiles #配置仓库路径
-          username: zhangweihui_work@163.com #访问git仓库的用户名
-          password: sun214day3 #访问git仓库的用户密码
+          uri: https://github.com/ZhangWweihui/springcloud-sample-config.git #配置git仓库地址
+          #searchPaths: Config/configFiles #配置仓库路径
+          #username: zhangweihui_work@163.com #访问git仓库的用户名
+          #password: sun214day3 #访问git仓库的用户密码
       label: master #配置仓库的分支
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: zhangweihui
-    password: 123qwe
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: zhangweihui
+#    password: 123qwe
+
 eureka:
   instance:
-    hostname: ${spring.cloud.client.ipAddress}
-    instanceId: ${spring.cloud.client.ipAddress}:${server.port}
+    hostname: eureka-server
+    #instanceId: ${spring.cloud.client.ipAddress}:${server.port}
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-management:
-  security:
-    enabled: false
+      defaultZone: http://eureka-server:8761/eureka/
+#management:
+#  security:
+#    enabled: false

@@ -1,17 +1,10 @@
-server:
-  port: 8764
-
 spring:
   application:
-    name: EurekaClient
-
-eureka:
-  instance:
-    hostname: localhost
-    prefer-ip-address: true
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-  client:
-    healthcheck:
-      enabled: true
-    service-url:
-      default-zone: http://localhost:8761/eureka/
+    name: eureka-client
+  profiles:
+    active: dev
+#  cloud:
+#    config:
+#      uri: https://github.com/ZhangWweihui/springcloud-sample-config.git
+#      label: master
+#      prefix: ${spring.cloud.config.uri}/${spring.application.name}/${spring.profiles.active}/${spring.cloud.config.label}
